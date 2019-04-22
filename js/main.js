@@ -5,22 +5,20 @@ const Mustache = require('mustache');
 
 function makeGetRequest() {
 
+  console.log(window.location);
+
   axios.get('http://webcode.me').then(res => {
-    // console.log(res.data.login);
+    // Render HTML coming from backend
     console.log(res);
+    document.getElementById('output').innerHTML = res.data;
+
+    // Mushtache Example
     var view = {
       name: "Joe",
       occupation: "Web Developer"
     };
-    var output = Mustache.render("<div></div>", view);
-    document.getElementById('output').innerHTML = output;
-    var template = document.querySelector("#template").innerHTML;
-    Mustache.parse(template); // optional, speeds up future uses
-    var rendered = Mustache.render(template, {
-      attr: "data-test",
-      attrVal: "test"
-    });
-    document.querySelector("#target").innerHTML = rendered;
+    var output = Mustache.render("{{name}} is a  {{occupation}}", view);
+    document.getElementById('test').innerHTML = output;
   });
 }
 
