@@ -9,7 +9,12 @@
 <h1>webpack Babel demo</h1>
 
 <div id="output"></div>
-
+<template id="template" >
+    <textarea style="width:300px">
+      <div {{attr}}="{{attrVal}}"></div>
+    </textarea>
+  </template>
+<template id="target"></template>
 <script src="bundle.js"></script>
 </body>
 </html>
