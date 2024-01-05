@@ -21,7 +21,7 @@
   "author": "Axel Rauschmayer",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.3",
+    "axios": "^1.6.4",
     "mustache": "^3.0.1"
   }
 }
